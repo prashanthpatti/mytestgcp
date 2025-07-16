@@ -20,12 +20,6 @@ This repository provides an automated solution for provisioning and managing **G
 │   ├── variables.tf         # Input variables definition
 │   ├── vars.tfvars          # Auto-populated Terraform variables file
 │   └── versions.tf          # Terraform and provider version constraints
-├── tf-modules/              # Reusable infrastructure modules
-│   ├── vpc/
-│   ├── cloud_function/
-│   ├── service_account/
-│   ├── iam/
-│   └── load_balancer/
 ├── function/
 │   ├── main.py              # Cloud Function (Python) source code
 │   └── function-source.zip  # Zipped artifact for Cloud Function deployment
