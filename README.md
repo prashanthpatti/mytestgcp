@@ -25,7 +25,14 @@ This repository automates the provisioning and management of **Google Cloud Proj
 │   ├── main.py              # Python-based Cloud Function
 │   └── function-source.zip  # Zipped artifact for deployment
 ````
-
+> 📦 The `terraform modules` can be used to clone from [mygcp-tf-modules](https://github.com/prashanthpatti/mygcp-tf-modules) locally, or you can reference it remotely in Terraform using:
+>
+> ```hcl
+> module "cloud_function" {
+>   source = "git::https://github.com/prashanthpatti/mygcp-tf-modules.git//cloud_function"
+>   ...
+> }
+> ```
 ---
 
 ## ⚙️ Prerequisites
