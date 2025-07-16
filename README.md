@@ -1,7 +1,3 @@
-Here's a **professionally structured `README.md`** in chronological format tailored for your **Ubuntu-only GCP Project Bootstrap & Terraform Automation** repository. This version improves clarity, consistency, and professionalism while preserving all the technical details you shared:
-
----
-
 ````markdown
 # 🚀 GCP Project Bootstrap & Terraform Automation (Ubuntu-Only)
 
@@ -13,7 +9,7 @@ This repository automates the provisioning and management of **Google Cloud Proj
 
 ## 📁 Repository Structure
 
-```text
+```
 .
 ├── execute.sh               # Bootstraps project, enables APIs, and applies Terraform
 ├── terminate.sh             # Destroys all Terraform-managed resources
@@ -36,7 +32,7 @@ This repository automates the provisioning and management of **Google Cloud Proj
 
 Ensure the following before proceeding:
 
-* **Operating System:** Ubuntu 20.04 or higher
+* **Operating System:** Ubuntu 22.04 or higher
 * **Installed CLI Tools:**
 
   * [Terraform CLI](https://developer.hashicorp.com/terraform/downloads)
@@ -132,6 +128,7 @@ project_name="myproject"
 billing_account="YOUR-BILLING-ID"
 region="us-central1"
 ```
+other variables keep it default
 
 > 💡 `project_id` will be generated automatically — **do not edit it manually**.
 
@@ -190,82 +187,3 @@ To tear down the infrastructure:
 * Optionally delete the GCP project (with confirmation)
 
 ---
-
-## ✅ Resources Managed
-
-* Google Cloud Project
-* Cloud Function (Gen2)
-* VPC Network & Subnets
-* VPC Access Connector
-* HTTP(S) Load Balancer
-* IAM Bindings
-* GCS Bucket for source and state
-
----
-
-## 🔐 Public vs Private Access
-
-### Public Access (For demos/dev):
-
-```hcl
-is_public     = true
-public_member = "allUsers"
-```
-
-### Private Access (Recommended for production):
-
-```hcl
-is_public     = true
-public_member = "serviceAccount:internal-sa@project.iam.gserviceaccount.com"
-```
-
-For secure access:
-
-* Use **IAP (Identity-Aware Proxy)**
-* Use **signed identity tokens** from authenticated clients
-
-> ❌ Cloud Run Gen2 + Serverless NEG does **not** support token forwarding via Load Balancer.
-
----
-
-## 📌 Deployment Summary
-
-| Use Case          | IAM Policy Example            | Supported |
-| ----------------- | ----------------------------- | --------- |
-| Public demo       | `run.invoker` + `allUsers`    | ✅ Yes     |
-| Secure production | IAP or signed tokens          | ✅ Yes     |
-| SA-only access    | Serverless NEG without tokens | ❌ No      |
-
----
-
-## 🧠 Notes
-
-* Ubuntu-only execution (tested on Ubuntu 20.04+)
-* Scripts are re-runnable (idempotent design)
-* Unique project names auto-generated via suffixing
-* Logging and error handling are minimal (see TODOs)
-
----
-
-## 🚧 Planned Enhancements
-
-* Folder-level GCP project creation
-* Selective module/resource destruction
-* Enhanced CLI output and logging
-* Advanced tfvars support for granular access control
-
----
-
-## 📞 Support
-
-Need help or customization?
-
-* Open an [issue](https://github.com/prashanthpatti/mygcprepo/issues)
-* Fork this repo and adapt it to your org's use case
-
-```
-
----
-
-Let me know if you'd like this in `.md` file format or want it tailored for multiple OS environments.
-```
