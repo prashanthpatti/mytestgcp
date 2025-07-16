@@ -1,0 +1,2 @@
+# Terraform working directory and lock file
+tf-project/.terraform*
